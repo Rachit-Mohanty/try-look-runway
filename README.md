@@ -86,4 +86,7 @@ Configured for automated static deployments on Vercel:
 - **Output Directory:** `dist`
 - **Node.js Version:** `18.x` / `20.x`
 
+feel free to use it and reveiw it and if you like it give it a star.
+
+thats all thankyou;
 
