@@ -19,3 +19,4 @@ View your app in AI Studio: https://ai.studio/apps/058b167a-4931-4d61-b62c-8e1b5
 3. Run the app:
    `npm run dev`
 "# try-the-look-runway" 
+"# try-the-look-runaway" 
