@@ -1,0 +1,1581 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>Try the Look — Runway</title>
+  <meta name="description" content="Six looks, styled head to toe. Explore the runway, isolate a look, and tap a pin to see the piece.">
+  <meta property="og:title" content="Try the Look — Runway">
+  <meta property="og:description" content="Six looks, styled head to toe. Explore the runway, isolate a look, and tap a pin to see the piece.">
+  <meta property="og:type" content="website">
+  <link rel="preload" as="image" href="https://reel-ref-try-the-look.vercel.app/assets/model-1-640.webp" fetchpriority="high">
+  <link rel="stylesheet" href="/src/inter-font.css">
+  <link rel="stylesheet" href="/src/runway.css">
+</head>
+<body>
+  <header class="site-header shopify-section-group-header-group">
+    <a href="#home" class="brand" data-nav="home" aria-label="Nike Runway home">
+      <img src="https://reel-ref-try-the-look.vercel.app/assets/nike-logo.svg" width="68" height="24" alt="Nike">
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#home" data-nav="home" aria-current="page">Home</a>
+      <a href="#runway" data-nav="runway">Runway</a>
+      <a href="#orbit" data-nav="orbit" hidden>Nike Orbit</a>
+      <a href="#rail" data-nav="rail" hidden>Hand Rail Pro</a>
+    </nav>
+    <button id="open-bag" type="button" aria-label="Open styling bag">
+      <svg width="22" height="24" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+        <path d="M4 8h16l1 16H3L4 8zM8 8V6a4 4 0 0 1 8 0v2"/>
+      </svg>
+      <span data-cart-count>0</span>
+    </button>
+  </header>
+
+  <main>
+    <section id="home-view" class="home" aria-label="Nike Runway Home">
+      <div class="home-hero">
+        <div class="home-hero__copy">
+          <p class="home-eyebrow">Season Edit · Interactive Lookbook</p>
+          <h1 class="home-title">Step onto the Runway.</h1>
+          <p class="home-sub">Six curated silhouettes staged inside an interactive spatial gallery. Enter the floor to rotate the 3D stage, isolate any garment by pin, and assemble your shortlist.</p>
+          <div class="home-actions">
+            <button type="button" class="home-cta" data-go-runway="0">
+              <span>Enter the Runway</span>
+              <svg width="22" height="12" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h24M19 1l6 6-6 6"/></svg>
+            </button>
+            <a href="#home-experience" class="home-secondary">How it works</a>
+          </div>
+          <p class="home-hero__facts">
+            <span>06 Curated Looks</span>
+            <span aria-hidden="true">·</span>
+            <span>3D Optical Stage</span>
+            <span aria-hidden="true">·</span>
+            <span>Direct Pin Isolation</span>
+          </p>
+        </div>
+
+        <button type="button" class="home-hero__visual" data-go-runway="0" aria-label="Enter the interactive Runway">
+          <div class="home-hero__frame">
+            <img src="/src/assets/images/runway_stage_hero_1795013890292.jpg" width="1408" height="792" loading="eager" decoding="async" referrerpolicy="no-referrer" alt="Sunlit brutalist concrete and travertine architectural runway gallery before the show">
+          </div>
+          <span class="home-hero__caption">
+            <span>Runway Gallery · Floor 01</span>
+            <span>Enter Show →</span>
+          </span>
+        </button>
+      </div>
+
+      <section id="home-experience" class="home-section">
+        <div class="home-section__head">
+          <h2 class="home-section__title">Designed for unhurried inspection.</h2>
+          <span class="home-section__meta">Spatial Runway System</span>
+        </div>
+        <div class="home-bento">
+          <button type="button" class="home-bento__lead" data-go-runway="0" aria-label="Launch the 3D spatial runway carousel">
+            <div class="home-bento__media">
+              <img src="/src/assets/images/runway_light_studio_1795013890120.jpg" width="1280" height="960" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Minimalist daylight studio plinth with architectural window shadows">
+            </div>
+            <div class="home-bento__copy">
+              <span class="home-step__num">01. The Spatial Carousel</span>
+              <p class="home-step__desc">Scrub, drag, or step through six complete silhouettes arranged in a continuous 3D optical ring with spring-weighted physics.</p>
+              <span class="home-step__link">Launch the 3D Stage →</span>
+            </div>
+          </button>
+
+          <div class="home-bento__stack">
+            <div class="home-step-card">
+              <span class="home-step__num">02. Pin-Point Isolation</span>
+              <p class="home-step__desc">Tap numbered markers directly on any silhouette—or open full-height look isolation—to reveal garment details without losing context.</p>
+            </div>
+            <div class="home-step-card">
+              <span class="home-step__num">03. Shortlist &amp; Direct Share</span>
+              <p class="home-step__desc">Save individual sizes or complete looks at 10% bundle pricing, copy direct links to any silhouette, and export your shortlist.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="home-chapters" class="home-section">
+        <div class="home-section__head">
+          <h2 class="home-section__title">The Six Chapters</h2>
+          <span class="home-section__meta">Select a chapter to enter</span>
+        </div>
+        <div class="home-chapters" id="home-chapters-list"></div>
+      </section>
+
+      <section class="home-section">
+        <div class="home-invite">
+          <div class="home-invite__copy">
+            <p class="home-eyebrow">The Runway</p>
+            <h2 class="home-invite__title">Ready to step onto the floor?</h2>
+            <p class="home-sub">All six looks, garment pins, sizing, and bundle pricing live inside the interactive Runway.</p>
+          </div>
+          <button type="button" class="home-cta" data-go-runway="0">
+            <span>Enter the Runway</span>
+            <svg width="22" height="12" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h24M19 1l6 6-6 6"/></svg>
+          </button>
+        </div>
+
+      </section>
+
+      <section id="home-policies" class="home-section">
+        <div class="home-section__head">
+          <h2 class="home-section__title">Security, Compliance &amp; Returns.</h2>
+          <span class="home-section__meta">Protected Storefront Standards</span>
+        </div>
+        <div class="home-trust-grid">
+          <div class="home-step-card">
+            <span class="home-step__num">SSL / HTTPS Encryption</span>
+            <p class="home-step__desc">Every browsing session, image request, and checkout handoff is encrypted in transit over TLS 1.3 (256-bit SSL) with strict HTTPS verification.</p>
+          </div>
+          <div class="home-step-card">
+            <span class="home-step__num">PCI DSS Level 1</span>
+            <p class="home-step__desc">Zero card numbers, CVVs, or banking details are ever collected or stored locally. Payments are tokenized inside a PCI DSS Level 1 checkout.</p>
+          </div>
+          <div class="home-step-card">
+            <span class="home-step__num">30-Day Return &amp; Refund</span>
+            <p class="home-step__desc">Unworn pieces with original tags and shoebox qualify for free pickup, size exchange, or full refund within 5–7 business days of inspection.</p>
+            <button type="button" class="home-policy-link" data-open-policy="returns">Read Return &amp; Refund Policy →</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="home-footer">
+        <span>Try the Look — Runway · TLS/SSL Encrypted · PCI DSS Compliant</span>
+        <div class="home-footer__links">
+          <a href="#home" data-nav="home">Home</a>
+          <a href="#runway" data-nav="runway">Runway</a>
+          <button type="button" class="home-footer__btn" data-open-size-guide="topwear">Size Guide (IND)</button>
+          <button type="button" class="home-footer__btn" data-open-policy="returns">Returns &amp; Refunds</button>
+          <button type="button" class="home-footer__btn" data-open-policy="security">SSL &amp; PCI DSS</button>
+        </div>
+      </footer>
+    </section>
+
+    <runway-section
+      id="Runway-template--28035983671601__the_runway_wdM8BG"
+      hidden
+      class="rw rw--add-icon rw--popup rw--list has-dividers has-border"
+      data-feel="balanced"
+      data-blur="true"
+      data-mblur="true"
+      data-style="ring"
+      data-mstyle="classic"
+      data-fit="true"
+      data-height-mode="original"
+      data-height-vh="100"
+      data-mheight-mode="custom"
+      data-mheight-vh="109"
+      data-reflect="false"
+      data-autoplay="true"
+      data-speed="5000"
+      data-after-add="stay"
+      data-bundle-code=""
+      data-msg-choose="Pick a size for: [items]"
+      data-msg-error="Couldn’t add to bag. Please try again."
+      data-msg-soldout="Sold out"
+      style="--rw-c-stage:#ffffff;--rw-c-panel:#ffffff;--rw-c-text:#151413;--rw-c-muted:#66625c;--rw-c-accent:#0e0e0e;--rw-c-on-accent:#ffffff;--rw-c-line:#c8c8c8;--rw-card:#DFDFDF;--rw-hf:var(--font-heading--family, inherit);--rw-hw:400;--rw-h-d:46px;--rw-h-m:24px;--rw-sub-d:12px;--rw-sub-m:12px;--rw-eyebrow-d:11px;--rw-eyebrow-m:10px;--rw-label-d:10px;--rw-label-m:9px;--rw-chip-d:17px;--rw-chip-m:18px;--rw-ph-d:18px;--rw-ph-m:16px;--rw-pt-size-d:13px;--rw-pt-size-m:12px;--rw-price-d:12px;--rw-price-m:12px;--rw-opt-d:11px;--rw-opt-m:11px;--rw-total-d:16px;--rw-total-m:16px;--rw-thumb-d:92px;--rw-thumb-m:62px;--rw-tag-top:18px;--rw-tag-left:0px;--rw-thumb-radius:0px;--rw-morph:900ms;--rw-bar-r:20px;--rw-panel-w:380px;--rw-panel-pad-d:32px;--rw-radius:0px;--rw-max:none;--rw-speed:5s;--rw-ax:40%;--rw-btn-radius:0px;--rw-pill-radius:30px;--rw-add-radius:20px;"
+    >
+      <div class="rw__sticky">
+        <div class="rw__grid">
+          <div class="rw__left">
+            <div class="rw__head">
+              <div class="rw__intro">
+                <h2 class="rw__title">Try the Look.</h2>
+                <p class="rw__sub">Six looks, styled head to toe. Tap a pin to see the piece.</p>
+              </div>
+              <div class="rw__spaces" aria-label="Runway collections">
+                <a href="#orbit" class="rw__space-link" data-nav="orbit">Nike Orbit →</a>
+                <a href="#rail" class="rw__space-link" data-nav="rail">Hand Rail Pro →</a>
+                <button type="button" class="rw__space-link" data-open-size-guide="topwear">Size Guide (IND)</button>
+              </div>
+              <span class="rw__sr" aria-live="polite" aria-atomic="true" data-rw-live></span>
+            </div>
+
+            <div class="rw__stage" data-rw-stage tabindex="0" role="region" aria-roledescription="carousel" aria-label="Try the Look. — use arrow keys or swipe to change look">
+              <div class="rw__actors" data-rw-actors>
+                <div class="rw__model" data-rw-model data-index="0" aria-hidden="true">
+                  <span class="rw__shadow" aria-hidden="true"></span>
+                  <div class="rw__figure" style="--rw-ar:0.5625">
+                    <div class="rw__art">
+                      <img data-model-image src="https://reel-ref-try-the-look.vercel.app/assets/model-1-640.webp" srcset="https://reel-ref-try-the-look.vercel.app/assets/model-1-640.webp 640w, https://reel-ref-try-the-look.vercel.app/assets/original-look-1.webp 1080w" sizes="(min-width: 1800px) 540px, (min-width: 750px) 420px, 320px" loading="eager" decoding="async" width="1100" height="1956" draggable="false" alt="The City Edit">
+                      <button type="button" class="rw__hit" data-rw-go="0" aria-label="Look 1: The City Edit" tabindex="-1"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="rw__model" data-rw-model data-index="1" aria-hidden="true">
+                  <span class="rw__shadow" aria-hidden="true"></span>
+                  <div class="rw__figure" style="--rw-ar:0.5625">
+                    <div class="rw__art">
+                      <img data-model-image src="https://reel-ref-try-the-look.vercel.app/assets/model-5-640.webp" srcset="https://reel-ref-try-the-look.vercel.app/assets/model-5-640.webp 640w, https://reel-ref-try-the-look.vercel.app/assets/original-look-5.webp 1080w" sizes="(min-width: 1800px) 540px, (min-width: 750px) 420px, 320px" loading="eager" decoding="async" width="1100" height="1956" draggable="false" alt="Gallery Opening">
+                      <button type="button" class="rw__hit" data-rw-go="1" aria-label="Look 2: Gallery Opening" tabindex="-1"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="rw__model" data-rw-model data-index="2" aria-hidden="true">
+                  <span class="rw__shadow" aria-hidden="true"></span>
+                  <div class="rw__figure" style="--rw-ar:0.5625">
+                    <div class="rw__art">
+                      <img data-model-image src="https://reel-ref-try-the-look.vercel.app/assets/model-4-640.webp" srcset="https://reel-ref-try-the-look.vercel.app/assets/model-4-640.webp 640w, https://reel-ref-try-the-look.vercel.app/assets/original-look-4.webp 1080w" sizes="(min-width: 1800px) 540px, (min-width: 750px) 420px, 320px" loading="eager" decoding="async" width="1100" height="1956" draggable="false" alt="Gallery Opening">
+                      <button type="button" class="rw__hit" data-rw-go="2" aria-label="Look 3: Gallery Opening" tabindex="-1"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="rw__model" data-rw-model data-index="3" aria-hidden="true">
+                  <span class="rw__shadow" aria-hidden="true"></span>
+                  <div class="rw__figure" style="--rw-ar:0.5625">
+                    <div class="rw__art">
+                      <img data-model-image src="https://reel-ref-try-the-look.vercel.app/assets/model-6-640.webp" srcset="https://reel-ref-try-the-look.vercel.app/assets/model-6-640.webp 640w, https://reel-ref-try-the-look.vercel.app/assets/original-look-6.webp 1080w" sizes="(min-width: 1800px) 540px, (min-width: 750px) 420px, 320px" loading="eager" decoding="async" width="1100" height="1956" draggable="false" alt="Studio Day">
+                      <button type="button" class="rw__hit" data-rw-go="3" aria-label="Look 4: Studio Day" tabindex="-1"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="rw__model" data-rw-model data-index="4" aria-hidden="true">
+                  <span class="rw__shadow" aria-hidden="true"></span>
+                  <div class="rw__figure" style="--rw-ar:0.5625">
+                    <div class="rw__art">
+                      <img data-model-image src="https://reel-ref-try-the-look.vercel.app/assets/model-3-640.webp" srcset="https://reel-ref-try-the-look.vercel.app/assets/model-3-640.webp 640w, https://reel-ref-try-the-look.vercel.app/assets/original-look-3.webp 1080w" sizes="(min-width: 1800px) 540px, (min-width: 750px) 420px, 320px" loading="eager" decoding="async" width="1100" height="1956" draggable="false" alt="Studio Day">
+                      <button type="button" class="rw__hit" data-rw-go="4" aria-label="Look 5: Studio Day" tabindex="-1"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="rw__model" data-rw-model data-index="5" aria-hidden="true">
+                  <span class="rw__shadow" aria-hidden="true"></span>
+                  <div class="rw__figure" style="--rw-ar:0.5625">
+                    <div class="rw__art">
+                      <img data-model-image src="https://reel-ref-try-the-look.vercel.app/assets/model-2-640.webp" srcset="https://reel-ref-try-the-look.vercel.app/assets/model-2-640.webp 640w, https://reel-ref-try-the-look.vercel.app/assets/original-look-2.webp 1080w" sizes="(min-width: 1800px) 540px, (min-width: 750px) 420px, 320px" loading="eager" decoding="async" width="1100" height="1956" draggable="false" alt="Studio Day">
+                      <button type="button" class="rw__hit" data-rw-go="5" aria-label="Look 6: Studio Day" tabindex="-1"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rw__heroes" data-rw-heroes>
+                <div class="rw__hero is-on" data-rw-hero data-index="0" data-name="The City Edit" data-label="Look 1: The City Edit" data-probe="https://reel-ref-try-the-look.vercel.app/assets/model-1-640.webp">
+                  <div class="rw__morph">
+                    <span class="rw__shadow" aria-hidden="true"></span>
+                    <div class="rw__figure" style="--rw-ar:0.5625">
+                      <div class="rw__art">
+                        <img data-model-image src="https://reel-ref-try-the-look.vercel.app/assets/model-1-640.webp" srcset="https://reel-ref-try-the-look.vercel.app/assets/model-1-640.webp 640w, https://reel-ref-try-the-look.vercel.app/assets/original-look-1.webp 1080w" sizes="(min-width: 1800px) 540px, (min-width: 750px) 420px, 320px" loading="eager" decoding="async" width="1100" height="1956" draggable="false" alt="The City Edit">
+                        <button type="button" class="rw__zoom" data-rw-zoom aria-label="View look: The City Edit" tabindex="-1"></button>
+                        <div class="rw__pins">
+                          <button type="button" class="rw__pin" data-rw-pin="1" data-tip="Charcoal Knit Crewneck" style="left:49%;top:28%;--pi:1" aria-label="1: Charcoal Knit Crewneck" tabindex="-1"><span class="rw__pin-dot">1</span></button>
+                          <button type="button" class="rw__pin" data-rw-pin="2" data-tip="Wide-Leg Indigo Denim" style="left:50%;top:62%;--pi:2" aria-label="2: Wide-Leg Indigo Denim" tabindex="-1"><span class="rw__pin-dot">2</span></button>
+                          <button type="button" class="rw__pin" data-rw-pin="3" data-tip="Grey Mesh Runners" style="left:58%;top:96%;--pi:3" aria-label="3: Grey Mesh Runners" tabindex="-1"><span class="rw__pin-dot">3</span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rw__hero" data-rw-hero data-index="1" data-name="Gallery Opening" data-label="Look 2: Gallery Opening" data-probe="https://reel-ref-try-the-look.vercel.app/assets/model-5-640.webp" aria-hidden="true">
+                  <div class="rw__morph">
+                    <span class="rw__shadow" aria-hidden="true"></span>
+                    <div class="rw__figure" style="--rw-ar:0.5625">
+                      <div class="rw__art">
+                        <img data-model-image src="https://reel-ref-try-the-look.vercel.app/assets/model-5-640.webp" srcset="https://reel-ref-try-the-look.vercel.app/assets/model-5-640.webp 640w, https://reel-ref-try-the-look.vercel.app/assets/original-look-5.webp 1080w" sizes="(min-width: 1800px) 540px, (min-width: 750px) 420px, 320px" loading="eager" decoding="async" width="1100" height="1956" draggable="false" alt="Gallery Opening">
+                        <button type="button" class="rw__zoom" data-rw-zoom aria-label="View look: Gallery Opening" tabindex="-1"></button>
+                        <div class="rw__pins">
+                          <button type="button" class="rw__pin" data-rw-pin="1" data-tip="Heavyweight Boxy White Tee" style="left:48%;top:28%;--pi:1" aria-label="1: Heavyweight Boxy White Tee" tabindex="-1"><span class="rw__pin-dot">1</span></button>
+                          <button type="button" class="rw__pin" data-rw-pin="2" data-tip="Acid-Wash Baggy Jeans" style="left:50%;top:62%;--pi:2" aria-label="2: Acid-Wash Baggy Jeans" tabindex="-1"><span class="rw__pin-dot">2</span></button>
+                          <button type="button" class="rw__pin" data-rw-pin="3" data-tip="Black &amp; Cream Canvas Sneakers" style="left:42%;top:96%;--pi:3" aria-label="3: Black &amp; Cream Canvas Sneakers" tabindex="-1"><span class="rw__pin-dot">3</span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rw__hero" data-rw-hero data-index="2" data-name="Gallery Opening" data-label="Look 3: Gallery Opening" data-probe="https://reel-ref-try-the-look.vercel.app/assets/model-4-640.webp" aria-hidden="true">
+                  <div class="rw__morph">
+                    <span class="rw__shadow" aria-hidden="true"></span>
+                    <div class="rw__figure" style="--rw-ar:0.5625">
+                      <div class="rw__art">
+                        <img data-model-image src="https://reel-ref-try-the-look.vercel.app/assets/model-4-640.webp" srcset="https://reel-ref-try-the-look.vercel.app/assets/model-4-640.webp 640w, https://reel-ref-try-the-look.vercel.app/assets/original-look-4.webp 1080w" sizes="(min-width: 1800px) 540px, (min-width: 750px) 420px, 320px" loading="eager" decoding="async" width="1100" height="1956" draggable="false" alt="Gallery Opening">
+                        <button type="button" class="rw__zoom" data-rw-zoom aria-label="View look: Gallery Opening" tabindex="-1"></button>
+                        <div class="rw__pins">
+                          <button type="button" class="rw__pin" data-rw-pin="1" data-tip="Olive Ribbed Fisherman Knit" style="left:50%;top:28%;--pi:1" aria-label="1: Olive Ribbed Fisherman Knit" tabindex="-1"><span class="rw__pin-dot">1</span></button>
+                          <button type="button" class="rw__pin" data-rw-pin="2" data-tip="Espresso Wide Corduroy Trousers" style="left:50%;top:62%;--pi:2" aria-label="2: Espresso Wide Corduroy Trousers" tabindex="-1"><span class="rw__pin-dot">2</span></button>
+                          <button type="button" class="rw__pin" data-rw-pin="3" data-tip="Tan Suede Trail Boots" style="left:58%;top:96%;--pi:3" aria-label="3: Tan Suede Trail Boots" tabindex="-1"><span class="rw__pin-dot">3</span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rw__hero" data-rw-hero data-index="3" data-name="Studio Day" data-label="Look 4: Studio Day" data-probe="https://reel-ref-try-the-look.vercel.app/assets/model-6-640.webp" aria-hidden="true">
+                  <div class="rw__morph">
+                    <span class="rw__shadow" aria-hidden="true"></span>
+                    <div class="rw__figure" style="--rw-ar:0.5625">
+                      <div class="rw__art">
+                        <img data-model-image src="https://reel-ref-try-the-look.vercel.app/assets/model-6-640.webp" srcset="https://reel-ref-try-the-look.vercel.app/assets/model-6-640.webp 640w, https://reel-ref-try-the-look.vercel.app/assets/original-look-6.webp 1080w" sizes="(min-width: 1800px) 540px, (min-width: 750px) 420px, 320px" loading="eager" decoding="async" width="1100" height="1956" draggable="false" alt="Studio Day">
+                        <button type="button" class="rw__zoom" data-rw-zoom aria-label="View look: Studio Day" tabindex="-1"></button>
+                        <div class="rw__pins">
+                          <button type="button" class="rw__pin" data-rw-pin="1" data-tip="Relaxed Heavyweight Black Tee" style="left:50%;top:28%;--pi:1" aria-label="1: Relaxed Heavyweight Black Tee" tabindex="-1"><span class="rw__pin-dot">1</span></button>
+                          <button type="button" class="rw__pin" data-rw-pin="2" data-tip="Ice-Wash Wide Denim Jeans" style="left:50%;top:62%;--pi:2" aria-label="2: Ice-Wash Wide Denim Jeans" tabindex="-1"><span class="rw__pin-dot">2</span></button>
+                          <button type="button" class="rw__pin" data-rw-pin="3" data-tip="Triple-White Court Sneakers" style="left:46%;top:96%;--pi:3" aria-label="3: Triple-White Court Sneakers" tabindex="-1"><span class="rw__pin-dot">3</span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rw__hero" data-rw-hero data-index="4" data-name="Studio Day" data-label="Look 5: Studio Day" data-probe="https://reel-ref-try-the-look.vercel.app/assets/model-3-640.webp" aria-hidden="true">
+                  <div class="rw__morph">
+                    <span class="rw__shadow" aria-hidden="true"></span>
+                    <div class="rw__figure" style="--rw-ar:0.5625">
+                      <div class="rw__art">
+                        <img data-model-image src="https://reel-ref-try-the-look.vercel.app/assets/model-3-640.webp" srcset="https://reel-ref-try-the-look.vercel.app/assets/model-3-640.webp 640w, https://reel-ref-try-the-look.vercel.app/assets/original-look-3.webp 1080w" sizes="(min-width: 1800px) 540px, (min-width: 750px) 420px, 320px" loading="eager" decoding="async" width="1100" height="1956" draggable="false" alt="Studio Day">
+                        <button type="button" class="rw__zoom" data-rw-zoom aria-label="View look: Studio Day" tabindex="-1"></button>
+                        <div class="rw__pins">
+                          <button type="button" class="rw__pin" data-rw-pin="1" data-tip="Rust Burgundy Ribbed Knit" style="left:50%;top:28%;--pi:1" aria-label="1: Rust Burgundy Ribbed Knit" tabindex="-1"><span class="rw__pin-dot">1</span></button>
+                          <button type="button" class="rw__pin" data-rw-pin="2" data-tip="Slate-Wash Wide Denim Jeans" style="left:50%;top:62%;--pi:2" aria-label="2: Slate-Wash Wide Denim Jeans" tabindex="-1"><span class="rw__pin-dot">2</span></button>
+                          <button type="button" class="rw__pin" data-rw-pin="3" data-tip="Black Leather Lug Sneakers" style="left:52%;top:96%;--pi:3" aria-label="3: Black Leather Lug Sneakers" tabindex="-1"><span class="rw__pin-dot">3</span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rw__hero" data-rw-hero data-index="5" data-name="Studio Day" data-label="Look 6: Studio Day" data-probe="https://reel-ref-try-the-look.vercel.app/assets/model-2-640.webp" aria-hidden="true">
+                  <div class="rw__morph">
+                    <span class="rw__shadow" aria-hidden="true"></span>
+                    <div class="rw__figure" style="--rw-ar:0.5625">
+                      <div class="rw__art">
+                        <img data-model-image src="https://reel-ref-try-the-look.vercel.app/assets/model-2-640.webp" srcset="https://reel-ref-try-the-look.vercel.app/assets/model-2-640.webp 640w, https://reel-ref-try-the-look.vercel.app/assets/original-look-2.webp 1080w" sizes="(min-width: 1800px) 540px, (min-width: 750px) 420px, 320px" loading="eager" decoding="async" width="1100" height="1956" draggable="false" alt="Studio Day">
+                        <button type="button" class="rw__zoom" data-rw-zoom aria-label="View look: Studio Day" tabindex="-1"></button>
+                        <div class="rw__pins">
+                          <button type="button" class="rw__pin" data-rw-pin="1" data-tip="Heather Grey Fleece Crewneck" style="left:50%;top:28%;--pi:1" aria-label="1: Heather Grey Fleece Crewneck" tabindex="-1"><span class="rw__pin-dot">1</span></button>
+                          <button type="button" class="rw__pin" data-rw-pin="2" data-tip="Sky-Wash Wide Denim Jeans" style="left:50%;top:62%;--pi:2" aria-label="2: Sky-Wash Wide Denim Jeans" tabindex="-1"><span class="rw__pin-dot">2</span></button>
+                          <button type="button" class="rw__pin" data-rw-pin="3" data-tip="Cream &amp; Navy Court Trainers" style="left:55%;top:96%;--pi:3" aria-label="3: Cream &amp; Navy Court Trainers" tabindex="-1"><span class="rw__pin-dot">3</span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <span class="rw__sweep" aria-hidden="true"></span>
+
+              <span class="rw__cursor" data-rw-cursor aria-hidden="true">
+                <span class="rw__cursor-in">
+                  <span class="rw__cursor-label rw__cursor-drag">Drag</span>
+                  <span class="rw__cursor-label rw__cursor-view">View</span>
+                </span>
+              </span>
+
+              <span class="rw__walk" aria-hidden="true">
+                <span class="rw__walk-line"></span>
+              </span>
+            </div>
+
+            <div class="rw__controls">
+              <button type="button" class="rw__icon" data-rw-prev aria-label="Previous look">
+                <svg width="26" height="14" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M25 7H1M7 1L1 7l6 6"/>
+                </svg>
+              </button>
+              <div class="rw__ticks">
+                <button type="button" class="rw__tick" data-rw-tick="0" aria-current="true" aria-label="Look 1: The City Edit">
+                  <span class="rw__tick-bar"></span>
+                  <span class="rw__tick-label">01<span class="rw__tick-name">&nbsp;&nbsp;The City Edit</span></span>
+                </button>
+                <button type="button" class="rw__tick" data-rw-tick="1" aria-current="false" aria-label="Look 2: Gallery Opening">
+                  <span class="rw__tick-bar"></span>
+                  <span class="rw__tick-label">02<span class="rw__tick-name">&nbsp;&nbsp;Gallery Opening</span></span>
+                </button>
+                <button type="button" class="rw__tick" data-rw-tick="2" aria-current="false" aria-label="Look 3: Gallery Opening">
+                  <span class="rw__tick-bar"></span>
+                  <span class="rw__tick-label">03<span class="rw__tick-name">&nbsp;&nbsp;Gallery Opening</span></span>
+                </button>
+                <button type="button" class="rw__tick" data-rw-tick="3" aria-current="false" aria-label="Look 4: Studio Day">
+                  <span class="rw__tick-bar"></span>
+                  <span class="rw__tick-label">04<span class="rw__tick-name">&nbsp;&nbsp;Studio Day</span></span>
+                </button>
+                <button type="button" class="rw__tick" data-rw-tick="4" aria-current="false" aria-label="Look 5: Studio Day">
+                  <span class="rw__tick-bar"></span>
+                  <span class="rw__tick-label">05<span class="rw__tick-name">&nbsp;&nbsp;Studio Day</span></span>
+                </button>
+                <button type="button" class="rw__tick" data-rw-tick="5" aria-current="false" aria-label="Look 6: Studio Day">
+                  <span class="rw__tick-bar"></span>
+                  <span class="rw__tick-label">06<span class="rw__tick-name">&nbsp;&nbsp;Studio Day</span></span>
+                </button>
+              </div>
+              <button type="button" class="rw__icon rw__auto" data-rw-auto aria-pressed="false" aria-label="Autoplay">
+                <svg class="rw__auto-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M7 4.5v15l12.5-7.5z"/>
+                </svg>
+                <svg class="rw__auto-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M6.5 4.5h3.5v15H6.5zM14 4.5h3.5v15H14z"/>
+                </svg>
+              </button>
+              <button type="button" class="rw__icon" data-rw-next aria-label="Next look">
+                <svg width="26" height="14" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M1 7h24M19 1l6 6-6 6"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="rw__lb" data-rw-lb data-word="Look" role="region" aria-label="View look" aria-hidden="true">
+              <div class="rw__lb-stage" data-rw-lb-stage></div>
+              <div class="rw__lb-top">
+                <p class="rw__lb-cap">
+                  <span class="rw__lb-kicker" data-rw-lb-kicker></span>
+                  <span class="rw__lb-name" data-rw-lb-name></span>
+                </p>
+                <button type="button" class="rw__lb-close" data-rw-zoom-close aria-label="Close">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path d="M5 5l14 14M19 5L5 19"/>
+                  </svg>
+                </button>
+              </div>
+              <p class="rw__lb-hint">Tap a dot to shop the piece</p>
+            </div>
+          </div>
+
+          <aside class="rw__panel has-rule">
+            <div class="rw__panel-inner">
+              <div class="rw__panel-head">
+                <h3 class="rw__panel-title">In this look</h3>
+                <div class="rw__panel-meta">
+                  <span class="rw__label" data-rw-pieces>3 pieces</span>
+                  <button type="button" class="rw__share" data-rw-share aria-label="Copy link to this look">
+                    <svg class="rw__share-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                    </svg>
+                    <svg class="rw__share-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M4.5 12.5l5 5L19.5 7"/>
+                    </svg>
+                    <span data-rw-share-label>Share</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Look 1: The City Edit (bndthK) -->
+              <div class="rw__look-panel is-in" data-rw-panel="0">
+                <div class="rw__mhead">
+                  <span class="rw__mhead-title">The City Edit</span>
+                  <div class="rw__panel-meta">
+                    <span class="rw__label">3 pieces</span>
+                    <button type="button" class="rw__share" data-rw-share aria-label="Copy link to this look">
+                      <svg class="rw__share-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                      </svg>
+                      <svg class="rw__share-check" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4.5 12.5l5 5L19.5 7"/>
+                      </svg>
+                      <span data-rw-share-label>Share</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="rw__items" role="list">
+                  <li class="rw__item" data-rw-card="1" style="--i:1" data-title="Air Jordan 12 Retro">
+                    <a class="rw__media" href="#product/tatum-5-orbit-copy" data-product-link="tatum-5-orbit-copy" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-tatum-5-orbit-copy.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">1</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nikey | Password: 1</span>
+                      <a class="rw__name" href="#product/tatum-5-orbit-copy" data-product-link="tatum-5-orbit-copy">Air Jordan 12 Retro</a>
+                      <span class="rw__price"><span>₹17,990</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_bndthK-1" aria-label="Add to bag: Air Jordan 12 Retro" data-added-label="Added to bag: Air Jordan 12 Retro">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_bndthK-1" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-tatum-5-orbit-copy.webp" width="160" height="160" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Air Jordan 12 Retro</span><span class="rw__picker-price">₹17,990</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Shoe size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-1-1" value="40" data-rw-option="0" checked><span class="rw__pill-label">40</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-1-1" value="41" data-rw-option="0"><span class="rw__pill-label">41</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-1-1" value="42" data-rw-option="0"><span class="rw__pill-label">42</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-1-1" value="43" data-rw-option="0"><span class="rw__pill-label">43</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-1-1" value="44" data-rw-option="0"><span class="rw__pill-label">44</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-1-1" value="45" data-rw-option="0"><span class="rw__pill-label">45</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-1-1" value="46" data-rw-option="0"><span class="rw__pill-label">46</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Air Jordan 12 Retro</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":57015167025457,"a":true,"o":["40"]},{"id":57015167058225,"a":true,"o":["41"]},{"id":57015167090993,"a":true,"o":["42"]},{"id":57015167123761,"a":true,"o":["43"]},{"id":57015167156529,"a":true,"o":["44"]},{"id":57015167189297,"a":true,"o":["45"]},{"id":57015167222065,"a":true,"o":["46"]}]</script>
+                    </div>
+                  </li>
+                  <li class="rw__item" data-rw-card="2" style="--i:2" data-title="Tshirt">
+                    <a class="rw__media" href="#product/tshirt" data-product-link="tshirt" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-tshirt.webp" width="400" height="563" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">2</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nike</span>
+                      <a class="rw__name" href="#product/tshirt" data-product-link="tshirt">Tshirt</a>
+                      <span class="rw__price"><span>₹3,490</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_bndthK-2" aria-label="Add to bag: Tshirt" data-added-label="Added to bag: Tshirt">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_bndthK-2" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-tshirt.webp" width="160" height="225" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Tshirt</span><span class="rw__picker-price">₹3,490</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-2-1" value="S" data-rw-option="0" checked><span class="rw__pill-label">S</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-2-1" value="L" data-rw-option="0"><span class="rw__pill-label">L</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-2-1" value="M" data-rw-option="0"><span class="rw__pill-label">M</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-2-1" value="XL" data-rw-option="0"><span class="rw__pill-label">XL</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Tshirt</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":56835911582001,"a":true,"o":["S"]},{"id":56835911614769,"a":true,"o":["L"]},{"id":56835911647537,"a":true,"o":["M"]},{"id":56835911680305,"a":true,"o":["XL"]}]</script>
+                    </div>
+                  </li>
+                  <li class="rw__item" data-rw-card="3" style="--i:3" data-title="Sweatshirt">
+                    <a class="rw__media" href="#product/sweatshirt" data-product-link="sweatshirt" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-sweatshirt.webp" width="400" height="581" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">3</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nike</span>
+                      <a class="rw__name" href="#product/sweatshirt" data-product-link="sweatshirt">Sweatshirt</a>
+                      <span class="rw__price"><span>₹6,990</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_bndthK-3" aria-label="Add to bag: Sweatshirt" data-added-label="Added to bag: Sweatshirt">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_bndthK-3" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-sweatshirt.webp" width="160" height="232" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Sweatshirt</span><span class="rw__picker-price">₹6,990</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-3-1" value="S" data-rw-option="0" checked><span class="rw__pill-label">S</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-3-1" value="L" data-rw-option="0"><span class="rw__pill-label">L</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-3-1" value="M" data-rw-option="0"><span class="rw__pill-label">M</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_bndthK-3-1" value="XL" data-rw-option="0"><span class="rw__pill-label">XL</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Sweatshirt</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":56835806396721,"a":true,"o":["S"]},{"id":56835806429489,"a":true,"o":["L"]},{"id":56835806462257,"a":true,"o":["M"]},{"id":56835806495025,"a":true,"o":["XL"]}]</script>
+                    </div>
+                  </li>
+                </ul>
+                <div class="rw__bundle has-rule">
+                  <p class="rw__msg" data-rw-msg role="status" aria-live="polite" hidden></p>
+                  <div class="rw__bundle-row">
+                    <div class="rw__bundle-copy"><span class="rw__bundle-title">Complete the look</span><span class="rw__bundle-note">Bundle all 3 and save 10%</span></div>
+                    <div class="rw__bundle-price"><s>₹28,470</s><strong>₹25,623</strong></div>
+                  </div>
+                  <button type="button" class="rw__cta" data-rw-all>
+                    <span class="rw__cta-add">Add full look to bag</span>
+                    <span class="rw__cta-m">Add full look — ₹25,623</span>
+                    <span class="rw__cta-done">Full look in your bag</span>
+                    <svg class="rw__cta-arrow" width="22" height="12" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h24M19 1l6 6-6 6"/></svg>
+                    <svg class="rw__cta-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                  </button>
+                </div>
+                <template data-rw-pieces-text>3 pieces</template>
+              </div>
+
+              <!-- Look 2: Gallery Opening (XckgG6) -->
+              <div class="rw__look-panel" data-rw-panel="1" hidden>
+                <div class="rw__mhead">
+                  <span class="rw__mhead-title">Gallery Opening</span>
+                  <div class="rw__panel-meta">
+                    <span class="rw__label">3 pieces</span>
+                    <button type="button" class="rw__share" data-rw-share aria-label="Copy link to this look">
+                      <svg class="rw__share-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                      <svg class="rw__share-check" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <span data-rw-share-label>Share</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="rw__items" role="list">
+                  <li class="rw__item" data-rw-card="1" style="--i:1" data-title="Tatum 5 Orbit">
+                    <a class="rw__media" href="#product/tatum-5-orbit" data-product-link="tatum-5-orbit" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-tatum-5-orbit.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">1</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nikey | Password: 1</span>
+                      <a class="rw__name" href="#product/tatum-5-orbit" data-product-link="tatum-5-orbit">Tatum 5 Orbit</a>
+                      <span class="rw__price"><span>₹11,490</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_XckgG6-1" aria-label="Add to bag: Tatum 5 Orbit" data-added-label="Added to bag: Tatum 5 Orbit">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_XckgG6-1" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-tatum-5-orbit.webp" width="160" height="160" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Tatum 5 Orbit</span><span class="rw__picker-price">₹11,490</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Shoe size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-1-1" value="40" data-rw-option="0" checked><span class="rw__pill-label">40</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-1-1" value="41" data-rw-option="0"><span class="rw__pill-label">41</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-1-1" value="42" data-rw-option="0"><span class="rw__pill-label">42</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-1-1" value="43" data-rw-option="0"><span class="rw__pill-label">43</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-1-1" value="44" data-rw-option="0"><span class="rw__pill-label">44</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-1-1" value="45" data-rw-option="0"><span class="rw__pill-label">45</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-1-1" value="46" data-rw-option="0"><span class="rw__pill-label">46</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Tatum 5 Orbit</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":57015166730545,"a":true,"o":["40"]},{"id":57015166763313,"a":true,"o":["41"]},{"id":57015166796081,"a":true,"o":["42"]},{"id":57015166828849,"a":true,"o":["43"]},{"id":57015166861617,"a":true,"o":["44"]},{"id":57015166894385,"a":true,"o":["45"]},{"id":57015166927153,"a":true,"o":["46"]}]</script>
+                    </div>
+                  </li>
+                  <li class="rw__item" data-rw-card="2" style="--i:2" data-title="Hoodie Black">
+                    <span class="rw__tag"><span class="rw__tag-text">New</span></span>
+                    <a class="rw__media" href="#product/hoodie-black" data-product-link="hoodie-black" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-hoodie-black.webp" width="400" height="536" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">2</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nike</span>
+                      <a class="rw__name" href="#product/hoodie-black" data-product-link="hoodie-black">Hoodie Black</a>
+                      <span class="rw__price"><span>₹9,490</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_XckgG6-2" aria-label="Add to bag: Hoodie Black" data-added-label="Added to bag: Hoodie Black">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_XckgG6-2" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-hoodie-black.webp" width="160" height="214" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Hoodie Black</span><span class="rw__picker-price">₹9,490</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-2-1" value="S" data-rw-option="0" checked><span class="rw__pill-label">S</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-2-1" value="L" data-rw-option="0"><span class="rw__pill-label">L</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-2-1" value="M" data-rw-option="0"><span class="rw__pill-label">M</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-2-1" value="XL" data-rw-option="0"><span class="rw__pill-label">XL</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Hoodie Black</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":56836251681073,"a":true,"o":["S"]},{"id":56836251713841,"a":true,"o":["L"]},{"id":56836251746609,"a":true,"o":["M"]},{"id":56836251779377,"a":true,"o":["XL"]}]</script>
+                    </div>
+                  </li>
+                  <li class="rw__item" data-rw-card="3" style="--i:3" data-title="Tshirt">
+                    <a class="rw__media" href="#product/tshirt" data-product-link="tshirt" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-tshirt.webp" width="400" height="563" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">3</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nike</span>
+                      <a class="rw__name" href="#product/tshirt" data-product-link="tshirt">Tshirt</a>
+                      <span class="rw__price"><span>₹3,490</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_XckgG6-3" aria-label="Add to bag: Tshirt" data-added-label="Added to bag: Tshirt">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_XckgG6-3" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-tshirt.webp" width="160" height="225" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Tshirt</span><span class="rw__picker-price">₹3,490</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-3-1" value="S" data-rw-option="0" checked><span class="rw__pill-label">S</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-3-1" value="L" data-rw-option="0"><span class="rw__pill-label">L</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-3-1" value="M" data-rw-option="0"><span class="rw__pill-label">M</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_XckgG6-3-1" value="XL" data-rw-option="0"><span class="rw__pill-label">XL</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Tshirt</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":56835911582001,"a":true,"o":["S"]},{"id":56835911614769,"a":true,"o":["L"]},{"id":56835911647537,"a":true,"o":["M"]},{"id":56835911680305,"a":true,"o":["XL"]}]</script>
+                    </div>
+                  </li>
+                </ul>
+                <div class="rw__bundle has-rule">
+                  <p class="rw__msg" data-rw-msg role="status" aria-live="polite" hidden></p>
+                  <div class="rw__bundle-row">
+                    <div class="rw__bundle-copy"><span class="rw__bundle-title">Complete the look</span><span class="rw__bundle-note">Bundle all 3 and save 10%</span></div>
+                    <div class="rw__bundle-price"><s>₹24,470</s><strong>₹22,023</strong></div>
+                  </div>
+                  <button type="button" class="rw__cta" data-rw-all>
+                    <span class="rw__cta-add">Add full look to bag</span>
+                    <span class="rw__cta-m">Add full look — ₹22,023</span>
+                    <span class="rw__cta-done">Full look in your bag</span>
+                    <svg class="rw__cta-arrow" width="22" height="12" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h24M19 1l6 6-6 6"/></svg>
+                    <svg class="rw__cta-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                  </button>
+                </div>
+                <template data-rw-pieces-text>3 pieces</template>
+              </div>
+
+              <!-- Look 3: Gallery Opening (rLfAhC) -->
+              <div class="rw__look-panel" data-rw-panel="2" hidden>
+                <div class="rw__mhead">
+                  <span class="rw__mhead-title">Gallery Opening</span>
+                  <div class="rw__panel-meta">
+                    <span class="rw__label">3 pieces</span>
+                    <button type="button" class="rw__share" data-rw-share aria-label="Copy link to this look">
+                      <svg class="rw__share-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                      <svg class="rw__share-check" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <span data-rw-share-label>Share</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="rw__items" role="list">
+                  <li class="rw__item" data-rw-card="1" style="--i:1" data-title="Sweatshirt Plus">
+                    <a class="rw__media" href="#product/sweatshirt-plus" data-product-link="sweatshirt-plus" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-sweatshirt-plus.webp" width="400" height="610" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">1</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nike</span>
+                      <a class="rw__name" href="#product/sweatshirt-plus" data-product-link="sweatshirt-plus">Sweatshirt Plus</a>
+                      <span class="rw__price"><span>₹7,990</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-1" aria-label="Add to bag: Sweatshirt Plus" data-added-label="Added to bag: Sweatshirt Plus">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-1" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-sweatshirt-plus.webp" width="160" height="244" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Sweatshirt Plus</span><span class="rw__picker-price">₹7,990</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-1-1" value="S" data-rw-option="0" checked><span class="rw__pill-label">S</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-1-1" value="L" data-rw-option="0"><span class="rw__pill-label">L</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-1-1" value="M" data-rw-option="0"><span class="rw__pill-label">M</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-1-1" value="XL" data-rw-option="0"><span class="rw__pill-label">XL</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Sweatshirt Plus</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":56836143743281,"a":true,"o":["S"]},{"id":56836143776049,"a":true,"o":["L"]},{"id":56836143808817,"a":true,"o":["M"]},{"id":56836143841585,"a":true,"o":["XL"]}]</script>
+                    </div>
+                  </li>
+                  <li class="rw__item" data-rw-card="2" style="--i:2" data-title="Tatum 5 Orbit">
+                    <span class="rw__tag"><span class="rw__tag-text">New</span></span>
+                    <a class="rw__media" href="#product/tatum-5-orbit" data-product-link="tatum-5-orbit" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-tatum-5-orbit.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">2</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nikey | Password: 1</span>
+                      <a class="rw__name" href="#product/tatum-5-orbit" data-product-link="tatum-5-orbit">Tatum 5 Orbit</a>
+                      <span class="rw__price"><span>₹11,490</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-2" aria-label="Add to bag: Tatum 5 Orbit" data-added-label="Added to bag: Tatum 5 Orbit">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-2" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-tatum-5-orbit.webp" width="160" height="160" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Tatum 5 Orbit</span><span class="rw__picker-price">₹11,490</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Shoe size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-2-1" value="40" data-rw-option="0" checked><span class="rw__pill-label">40</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-2-1" value="41" data-rw-option="0"><span class="rw__pill-label">41</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-2-1" value="42" data-rw-option="0"><span class="rw__pill-label">42</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-2-1" value="43" data-rw-option="0"><span class="rw__pill-label">43</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-2-1" value="44" data-rw-option="0"><span class="rw__pill-label">44</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-2-1" value="45" data-rw-option="0"><span class="rw__pill-label">45</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-2-1" value="46" data-rw-option="0"><span class="rw__pill-label">46</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Tatum 5 Orbit</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":57015166730545,"a":true,"o":["40"]},{"id":57015166763313,"a":true,"o":["41"]},{"id":57015166796081,"a":true,"o":["42"]},{"id":57015166828849,"a":true,"o":["43"]},{"id":57015166861617,"a":true,"o":["44"]},{"id":57015166894385,"a":true,"o":["45"]},{"id":57015166927153,"a":true,"o":["46"]}]</script>
+                    </div>
+                  </li>
+                  <li class="rw__item" data-rw-card="3" style="--i:3" data-title="Tshirt">
+                    <a class="rw__media" href="#product/tshirt" data-product-link="tshirt" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-tshirt.webp" width="400" height="563" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">3</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nike</span>
+                      <a class="rw__name" href="#product/tshirt" data-product-link="tshirt">Tshirt</a>
+                      <span class="rw__price"><span>₹3,490</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-3" aria-label="Add to bag: Tshirt" data-added-label="Added to bag: Tshirt">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-3" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-tshirt.webp" width="160" height="225" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Tshirt</span><span class="rw__picker-price">₹3,490</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-3-1" value="S" data-rw-option="0" checked><span class="rw__pill-label">S</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-3-1" value="L" data-rw-option="0"><span class="rw__pill-label">L</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-3-1" value="M" data-rw-option="0"><span class="rw__pill-label">M</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_rLfAhC-3-1" value="XL" data-rw-option="0"><span class="rw__pill-label">XL</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Tshirt</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":56835911582001,"a":true,"o":["S"]},{"id":56835911614769,"a":true,"o":["L"]},{"id":56835911647537,"a":true,"o":["M"]},{"id":56835911680305,"a":true,"o":["XL"]}]</script>
+                    </div>
+                  </li>
+                </ul>
+                <div class="rw__bundle has-rule">
+                  <p class="rw__msg" data-rw-msg role="status" aria-live="polite" hidden></p>
+                  <div class="rw__bundle-row">
+                    <div class="rw__bundle-copy"><span class="rw__bundle-title">Complete the look</span><span class="rw__bundle-note">Bundle all 3 and save 10%</span></div>
+                    <div class="rw__bundle-price"><s>₹22,970</s><strong>₹20,673</strong></div>
+                  </div>
+                  <button type="button" class="rw__cta" data-rw-all>
+                    <span class="rw__cta-add">Add full look to bag</span>
+                    <span class="rw__cta-m">Add full look — ₹20,673</span>
+                    <span class="rw__cta-done">Full look in your bag</span>
+                    <svg class="rw__cta-arrow" width="22" height="12" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h24M19 1l6 6-6 6"/></svg>
+                    <svg class="rw__cta-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                  </button>
+                </div>
+                <template data-rw-pieces-text>3 pieces</template>
+              </div>
+
+              <!-- Look 4: Studio Day (FKg67q) -->
+              <div class="rw__look-panel" data-rw-panel="3" hidden>
+                <div class="rw__mhead">
+                  <span class="rw__mhead-title">Studio Day</span>
+                  <div class="rw__panel-meta">
+                    <span class="rw__label">3 pieces</span>
+                    <button type="button" class="rw__share" data-rw-share aria-label="Copy link to this look">
+                      <svg class="rw__share-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                      <svg class="rw__share-check" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <span data-rw-share-label>Share</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="rw__items" role="list">
+                  <li class="rw__item" data-rw-card="1" style="--i:1" data-title="Hoodie Black">
+                    <a class="rw__media" href="#product/hoodie-black" data-product-link="hoodie-black" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-hoodie-black.webp" width="400" height="536" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">1</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nike</span>
+                      <a class="rw__name" href="#product/hoodie-black" data-product-link="hoodie-black">Hoodie Black</a>
+                      <span class="rw__price"><span>₹9,490</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_FKg67q-1" aria-label="Add to bag: Hoodie Black" data-added-label="Added to bag: Hoodie Black">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_FKg67q-1" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-hoodie-black.webp" width="160" height="214" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Hoodie Black</span><span class="rw__picker-price">₹9,490</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-1-1" value="S" data-rw-option="0" checked><span class="rw__pill-label">S</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-1-1" value="L" data-rw-option="0"><span class="rw__pill-label">L</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-1-1" value="M" data-rw-option="0"><span class="rw__pill-label">M</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-1-1" value="XL" data-rw-option="0"><span class="rw__pill-label">XL</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Hoodie Black</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":56836251681073,"a":true,"o":["S"]},{"id":56836251713841,"a":true,"o":["L"]},{"id":56836251746609,"a":true,"o":["M"]},{"id":56836251779377,"a":true,"o":["XL"]}]</script>
+                    </div>
+                  </li>
+                  <li class="rw__item" data-rw-card="2" style="--i:2" data-title="Air Jordan 12 Retro">
+                    <a class="rw__media" href="#product/tatum-5-orbit-copy" data-product-link="tatum-5-orbit-copy" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-tatum-5-orbit-copy.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">2</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nikey | Password: 1</span>
+                      <a class="rw__name" href="#product/tatum-5-orbit-copy" data-product-link="tatum-5-orbit-copy">Air Jordan 12 Retro</a>
+                      <span class="rw__price"><span>₹17,990</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_FKg67q-2" aria-label="Add to bag: Air Jordan 12 Retro" data-added-label="Added to bag: Air Jordan 12 Retro">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_FKg67q-2" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-tatum-5-orbit-copy.webp" width="160" height="160" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Air Jordan 12 Retro</span><span class="rw__picker-price">₹17,990</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Shoe size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-2-1" value="40" data-rw-option="0" checked><span class="rw__pill-label">40</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-2-1" value="41" data-rw-option="0"><span class="rw__pill-label">41</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-2-1" value="42" data-rw-option="0"><span class="rw__pill-label">42</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-2-1" value="43" data-rw-option="0"><span class="rw__pill-label">43</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-2-1" value="44" data-rw-option="0"><span class="rw__pill-label">44</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-2-1" value="45" data-rw-option="0"><span class="rw__pill-label">45</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-2-1" value="46" data-rw-option="0"><span class="rw__pill-label">46</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Air Jordan 12 Retro</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":57015167025457,"a":true,"o":["40"]},{"id":57015167058225,"a":true,"o":["41"]},{"id":57015167090993,"a":true,"o":["42"]},{"id":57015167123761,"a":true,"o":["43"]},{"id":57015167156529,"a":true,"o":["44"]},{"id":57015167189297,"a":true,"o":["45"]},{"id":57015167222065,"a":true,"o":["46"]}]</script>
+                    </div>
+                  </li>
+                  <li class="rw__item" data-rw-card="3" style="--i:3" data-title="Tshirt">
+                    <a class="rw__media" href="#product/tshirt" data-product-link="tshirt" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-tshirt.webp" width="400" height="563" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">3</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nike</span>
+                      <a class="rw__name" href="#product/tshirt" data-product-link="tshirt">Tshirt</a>
+                      <span class="rw__price"><span>₹3,490</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_FKg67q-3" aria-label="Add to bag: Tshirt" data-added-label="Added to bag: Tshirt">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_FKg67q-3" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-tshirt.webp" width="160" height="225" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Tshirt</span><span class="rw__picker-price">₹3,490</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-3-1" value="S" data-rw-option="0" checked><span class="rw__pill-label">S</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-3-1" value="L" data-rw-option="0"><span class="rw__pill-label">L</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-3-1" value="M" data-rw-option="0"><span class="rw__pill-label">M</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_FKg67q-3-1" value="XL" data-rw-option="0"><span class="rw__pill-label">XL</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Tshirt</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":56835911582001,"a":true,"o":["S"]},{"id":56835911614769,"a":true,"o":["L"]},{"id":56835911647537,"a":true,"o":["M"]},{"id":56835911680305,"a":true,"o":["XL"]}]</script>
+                    </div>
+                  </li>
+                </ul>
+                <div class="rw__bundle has-rule">
+                  <p class="rw__msg" data-rw-msg role="status" aria-live="polite" hidden></p>
+                  <div class="rw__bundle-row">
+                    <div class="rw__bundle-copy"><span class="rw__bundle-title">Complete the look</span><span class="rw__bundle-note">Bundle all 3 and save 10%</span></div>
+                    <div class="rw__bundle-price"><s>₹30,970</s><strong>₹27,873</strong></div>
+                  </div>
+                  <button type="button" class="rw__cta" data-rw-all>
+                    <span class="rw__cta-add">Add full look to bag</span>
+                    <span class="rw__cta-m">Add full look — ₹27,873</span>
+                    <span class="rw__cta-done">Full look in your bag</span>
+                    <svg class="rw__cta-arrow" width="22" height="12" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h24M19 1l6 6-6 6"/></svg>
+                    <svg class="rw__cta-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                  </button>
+                </div>
+                <template data-rw-pieces-text>3 pieces</template>
+              </div>
+
+              <!-- Look 5: Studio Day (8KREEE) -->
+              <div class="rw__look-panel" data-rw-panel="4" hidden>
+                <div class="rw__mhead">
+                  <span class="rw__mhead-title">Studio Day</span>
+                  <div class="rw__panel-meta">
+                    <span class="rw__label">3 pieces</span>
+                    <button type="button" class="rw__share" data-rw-share aria-label="Copy link to this look">
+                      <svg class="rw__share-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                      <svg class="rw__share-check" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <span data-rw-share-label>Share</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="rw__items" role="list">
+                  <li class="rw__item" data-rw-card="1" style="--i:1" data-title="Sweatshirt">
+                    <a class="rw__media" href="#product/sweatshirt" data-product-link="sweatshirt" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-sweatshirt.webp" width="400" height="581" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">1</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nike</span>
+                      <a class="rw__name" href="#product/sweatshirt" data-product-link="sweatshirt">Sweatshirt</a>
+                      <span class="rw__price"><span>₹6,990</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_8KREEE-1" aria-label="Add to bag: Sweatshirt" data-added-label="Added to bag: Sweatshirt">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_8KREEE-1" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-sweatshirt.webp" width="160" height="232" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Sweatshirt</span><span class="rw__picker-price">₹6,990</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-1-1" value="S" data-rw-option="0" checked><span class="rw__pill-label">S</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-1-1" value="L" data-rw-option="0"><span class="rw__pill-label">L</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-1-1" value="M" data-rw-option="0"><span class="rw__pill-label">M</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-1-1" value="XL" data-rw-option="0"><span class="rw__pill-label">XL</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Sweatshirt</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":56835806396721,"a":true,"o":["S"]},{"id":56835806429489,"a":true,"o":["L"]},{"id":56835806462257,"a":true,"o":["M"]},{"id":56835806495025,"a":true,"o":["XL"]}]</script>
+                    </div>
+                  </li>
+                  <li class="rw__item" data-rw-card="2" style="--i:2" data-title="Tatum 5 Orbit">
+                    <a class="rw__media" href="#product/tatum-5-orbit" data-product-link="tatum-5-orbit" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-tatum-5-orbit.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">2</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nikey | Password: 1</span>
+                      <a class="rw__name" href="#product/tatum-5-orbit" data-product-link="tatum-5-orbit">Tatum 5 Orbit</a>
+                      <span class="rw__price"><span>₹11,490</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_8KREEE-2" aria-label="Add to bag: Tatum 5 Orbit" data-added-label="Added to bag: Tatum 5 Orbit">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_8KREEE-2" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-tatum-5-orbit.webp" width="160" height="160" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Tatum 5 Orbit</span><span class="rw__picker-price">₹11,490</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Shoe size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-2-1" value="40" data-rw-option="0" checked><span class="rw__pill-label">40</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-2-1" value="41" data-rw-option="0"><span class="rw__pill-label">41</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-2-1" value="42" data-rw-option="0"><span class="rw__pill-label">42</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-2-1" value="43" data-rw-option="0"><span class="rw__pill-label">43</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-2-1" value="44" data-rw-option="0"><span class="rw__pill-label">44</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-2-1" value="45" data-rw-option="0"><span class="rw__pill-label">45</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-2-1" value="46" data-rw-option="0"><span class="rw__pill-label">46</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Tatum 5 Orbit</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":57015166730545,"a":true,"o":["40"]},{"id":57015166763313,"a":true,"o":["41"]},{"id":57015166796081,"a":true,"o":["42"]},{"id":57015166828849,"a":true,"o":["43"]},{"id":57015166861617,"a":true,"o":["44"]},{"id":57015166894385,"a":true,"o":["45"]},{"id":57015166927153,"a":true,"o":["46"]}]</script>
+                    </div>
+                  </li>
+                  <li class="rw__item" data-rw-card="3" style="--i:3" data-title="Tshirt">
+                    <a class="rw__media" href="#product/tshirt" data-product-link="tshirt" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-tshirt.webp" width="400" height="563" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">3</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nike</span>
+                      <a class="rw__name" href="#product/tshirt" data-product-link="tshirt">Tshirt</a>
+                      <span class="rw__price"><span>₹3,490</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_8KREEE-3" aria-label="Add to bag: Tshirt" data-added-label="Added to bag: Tshirt">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_8KREEE-3" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-tshirt.webp" width="160" height="225" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Tshirt</span><span class="rw__picker-price">₹3,490</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-3-1" value="S" data-rw-option="0" checked><span class="rw__pill-label">S</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-3-1" value="L" data-rw-option="0"><span class="rw__pill-label">L</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-3-1" value="M" data-rw-option="0"><span class="rw__pill-label">M</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_8KREEE-3-1" value="XL" data-rw-option="0"><span class="rw__pill-label">XL</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Tshirt</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":56835911582001,"a":true,"o":["S"]},{"id":56835911614769,"a":true,"o":["L"]},{"id":56835911647537,"a":true,"o":["M"]},{"id":56835911680305,"a":true,"o":["XL"]}]</script>
+                    </div>
+                  </li>
+                </ul>
+                <div class="rw__bundle has-rule">
+                  <p class="rw__msg" data-rw-msg role="status" aria-live="polite" hidden></p>
+                  <div class="rw__bundle-row">
+                    <div class="rw__bundle-copy"><span class="rw__bundle-title">Complete the look</span><span class="rw__bundle-note">Bundle all 3 and save 10%</span></div>
+                    <div class="rw__bundle-price"><s>₹21,970</s><strong>₹19,773</strong></div>
+                  </div>
+                  <button type="button" class="rw__cta" data-rw-all>
+                    <span class="rw__cta-add">Add full look to bag</span>
+                    <span class="rw__cta-m">Add full look — ₹19,773</span>
+                    <span class="rw__cta-done">Full look in your bag</span>
+                    <svg class="rw__cta-arrow" width="22" height="12" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h24M19 1l6 6-6 6"/></svg>
+                    <svg class="rw__cta-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                  </button>
+                </div>
+                <template data-rw-pieces-text>3 pieces</template>
+              </div>
+
+              <!-- Look 6: Studio Day (N3bfm9) -->
+              <div class="rw__look-panel" data-rw-panel="5" hidden>
+                <div class="rw__mhead">
+                  <span class="rw__mhead-title">Studio Day</span>
+                  <div class="rw__panel-meta">
+                    <span class="rw__label">3 pieces</span>
+                    <button type="button" class="rw__share" data-rw-share aria-label="Copy link to this look">
+                      <svg class="rw__share-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                      <svg class="rw__share-check" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <span data-rw-share-label>Share</span>
+                    </button>
+                  </div>
+                </div>
+                <ul class="rw__items" role="list">
+                  <li class="rw__item" data-rw-card="1" style="--i:1" data-title="Hoodie">
+                    <a class="rw__media" href="#product/hoodie" data-product-link="hoodie" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-hoodie.webp" width="400" height="555" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">1</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nike</span>
+                      <a class="rw__name" href="#product/hoodie" data-product-link="hoodie">Hoodie</a>
+                      <span class="rw__price"><span>₹8,490</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-1" aria-label="Add to bag: Hoodie" data-added-label="Added to bag: Hoodie">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-1" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-hoodie.webp" width="160" height="222" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Hoodie</span><span class="rw__picker-price">₹8,490</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-1-1" value="S" data-rw-option="0" checked><span class="rw__pill-label">S</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-1-1" value="L" data-rw-option="0"><span class="rw__pill-label">L</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-1-1" value="M" data-rw-option="0"><span class="rw__pill-label">M</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-1-1" value="XL" data-rw-option="0"><span class="rw__pill-label">XL</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Hoodie</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":56836002185521,"a":true,"o":["S"]},{"id":56836002218289,"a":true,"o":["L"]},{"id":56836002251057,"a":true,"o":["M"]},{"id":56836002283825,"a":true,"o":["XL"]}]</script>
+                    </div>
+                  </li>
+                  <li class="rw__item" data-rw-card="2" style="--i:2" data-title="Luka 5">
+                    <a class="rw__media" href="#product/air-jordan-12-retro-copy" data-product-link="air-jordan-12-retro-copy" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-air-jordan-12-retro-copy.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">2</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nikey | Password: 1</span>
+                      <a class="rw__name" href="#product/air-jordan-12-retro-copy" data-product-link="air-jordan-12-retro-copy">Luka 5</a>
+                      <span class="rw__price"><span>₹12,990</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-2" aria-label="Add to bag: Luka 5" data-added-label="Added to bag: Luka 5">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-2" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-air-jordan-12-retro-copy.webp" width="160" height="160" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Luka 5</span><span class="rw__picker-price">₹12,990</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Shoe size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-2-1" value="40" data-rw-option="0" checked><span class="rw__pill-label">40</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-2-1" value="41" data-rw-option="0"><span class="rw__pill-label">41</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-2-1" value="42" data-rw-option="0"><span class="rw__pill-label">42</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-2-1" value="43" data-rw-option="0"><span class="rw__pill-label">43</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-2-1" value="44" data-rw-option="0"><span class="rw__pill-label">44</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-2-1" value="45" data-rw-option="0"><span class="rw__pill-label">45</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-2-1" value="46" data-rw-option="0"><span class="rw__pill-label">46</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Luka 5</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":57015176364337,"a":true,"o":["40"]},{"id":57015176397105,"a":true,"o":["41"]},{"id":57015176429873,"a":true,"o":["42"]},{"id":57015176462641,"a":true,"o":["43"]},{"id":57015176495409,"a":true,"o":["44"]},{"id":57015176528177,"a":true,"o":["45"]},{"id":57015176560945,"a":true,"o":["46"]}]</script>
+                    </div>
+                  </li>
+                  <li class="rw__item" data-rw-card="3" style="--i:3" data-title="Tshirt">
+                    <a class="rw__media" href="#product/tshirt" data-product-link="tshirt" tabindex="-1" aria-hidden="true">
+                      <img src="https://reel-ref-try-the-look.vercel.app/assets/source-tshirt.webp" width="400" height="563" loading="lazy" decoding="async" alt="">
+                      <span class="rw__num">3</span>
+                    </a>
+                    <div class="rw__info">
+                      <span class="rw__type">Nike</span>
+                      <a class="rw__name" href="#product/tshirt" data-product-link="tshirt">Tshirt</a>
+                      <span class="rw__price"><span>₹3,490</span></span>
+                    </div>
+                    <button type="button" class="rw__add" data-rw-add aria-expanded="false" aria-controls="Picker-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-3" aria-label="Add to bag: Tshirt" data-added-label="Added to bag: Tshirt">
+                      <svg class="rw__add-plus" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+                      <svg class="rw__add-check" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>
+                      <svg class="rw__add-spin" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                    </button>
+                    <div class="rw__picker" id="Picker-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-3" data-rw-picker hidden>
+                      <div class="rw__picker-head">
+                        <img class="rw__picker-thumb" src="https://reel-ref-try-the-look.vercel.app/assets/source-tshirt.webp" width="160" height="225" loading="lazy" decoding="async" alt="">
+                        <div class="rw__picker-meta"><span class="rw__picker-title">Tshirt</span><span class="rw__picker-price">₹3,490</span></div>
+                        <button type="button" class="rw__picker-close" data-rw-pick-close aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+                      </div>
+                      <fieldset class="rw__opt">
+                        <legend class="rw__opt-name">Size</legend>
+                        <div class="rw__pills">
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-3-1" value="S" data-rw-option="0" checked><span class="rw__pill-label">S</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-3-1" value="L" data-rw-option="0"><span class="rw__pill-label">L</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-3-1" value="M" data-rw-option="0"><span class="rw__pill-label">M</span></label>
+                          <label class="rw__pill"><input type="radio" name="Opt-template--28035983671601__the_runway_wdM8BG-look_N3bfm9-3-1" value="XL" data-rw-option="0"><span class="rw__pill-label">XL</span></label>
+                        </div>
+                      </fieldset>
+                      <button type="button" class="rw__confirm" data-rw-confirm><span data-rw-confirm-label data-add="Add to bag">Add to bag</span><span class="rw__sr"> — Tshirt</span></button>
+                      <script type="application/json" data-rw-variants>[{"id":56835911582001,"a":true,"o":["S"]},{"id":56835911614769,"a":true,"o":["L"]},{"id":56835911647537,"a":true,"o":["M"]},{"id":56835911680305,"a":true,"o":["XL"]}]</script>
+                    </div>
+                  </li>
+                </ul>
+                <div class="rw__bundle has-rule">
+                  <p class="rw__msg" data-rw-msg role="status" aria-live="polite" hidden></p>
+                  <div class="rw__bundle-row">
+                    <div class="rw__bundle-copy"><span class="rw__bundle-title">Complete the look</span><span class="rw__bundle-note">Bundle all 3 and save 10%</span></div>
+                    <div class="rw__bundle-price"><s>₹24,970</s><strong>₹22,473</strong></div>
+                  </div>
+                  <button type="button" class="rw__cta" data-rw-all>
+                    <span class="rw__cta-add">Add full look to bag</span>
+                    <span class="rw__cta-m">Add full look — ₹22,473</span>
+                    <span class="rw__cta-done">Full look in your bag</span>
+                    <svg class="rw__cta-arrow" width="22" height="12" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h24M19 1l6 6-6 6"/></svg>
+                    <svg class="rw__cta-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a9 9 0 1 1-9 9"/></svg>
+                  </button>
+                </div>
+                <template data-rw-pieces-text>3 pieces</template>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </runway-section>
+
+    <section id="orbit-view" class="orbit" hidden aria-label="Nike Orbit">
+      <div class="orbit__stage" data-orbit-stage tabindex="0" role="region" aria-roledescription="orbital footwear showcase" aria-label="Nike Orbit sneaker showcase — drag, scroll, or use arrow keys">
+        <div class="orbit__info" data-orbit-info>
+          <span class="orbit__counter" data-orbit-counter>01 / 06</span>
+          <h1 class="orbit__title" data-orbit-title>AIR JORDAN<br>12 RETRO</h1>
+          <p class="orbit__price" data-orbit-price>₹17,990</p>
+          <a class="orbit__details" href="#product/tatum-5-orbit-copy" data-orbit-details data-product-link="tatum-5-orbit-copy">View details →</a>
+        </div>
+
+        <div class="orbit__arc" data-orbit-arc aria-live="polite"></div>
+
+        <div class="orbit__bottom">
+          <div class="orbit__wheel-area">
+            <div class="orbit__wheel-thumb" aria-hidden="true">
+              <img data-orbit-thumb src="" alt="">
+            </div>
+            <div class="orbit__wheel-control">
+              <div class="orbit__wheel-track" data-orbit-wheel role="slider" tabindex="0" aria-label="Spin orbital sneaker wheel" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1">
+                <div class="orbit__wheel-knurl" data-orbit-knurl></div>
+                <div class="orbit__wheel-sheen" aria-hidden="true"></div>
+              </div>
+              <div class="orbit__wheel-meta">
+                <span class="orbit__wheel-num">01</span>
+                <span class="orbit__wheel-caption">DRAG THE WHEEL</span>
+                <span class="orbit__wheel-num" data-orbit-total>06</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="orbit__sizes-wrap">
+            <div class="orbit__sizes-head">
+              <span class="orbit__sizes-label">EU Size · IND Base</span>
+              <button type="button" class="orbit__guide-btn" data-open-size-guide="footwear">Size Guide</button>
+            </div>
+            <div class="orbit__sizes" data-orbit-sizes role="radiogroup" aria-label="Select EU shoe size"></div>
+            <button type="button" class="orbit__add-btn" data-orbit-add>
+              <span data-orbit-add-label>Add EU 40 to bag</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rail-view" class="rail" hidden aria-label="Hand Rail Pro">
+      <div class="rail__stage" data-rail-stage tabindex="0" role="region" aria-roledescription="hanging garment rail" aria-label="Hand Rail Pro garment rack — drag horizontally, scroll, or use arrow keys">
+        <div class="rail__kicker">
+          <span class="rail__kicker-muted">New Collection</span>
+          <span class="rail__kicker-strong">Hoodies + Streetwear</span>
+        </div>
+
+        <svg class="rail__rod-svg" data-rail-svg aria-hidden="true">
+          <defs>
+            <linearGradient id="rail-steel-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#c6c9cd"/>
+              <stop offset="30%" stop-color="#f8f9fa"/>
+              <stop offset="68%" stop-color="#8b9096"/>
+              <stop offset="100%" stop-color="#4d5258"/>
+            </linearGradient>
+            <filter id="rail-rod-shadow" x="-5%" y="-40%" width="110%" height="280%">
+              <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#111315" flood-opacity="0.16"/>
+            </filter>
+          </defs>
+          <path class="rail__rod-path" data-rail-rod-path fill="none" stroke="url(#rail-steel-grad)" stroke-width="9" stroke-linecap="round" filter="url(#rail-rod-shadow)"/>
+          <path class="rail__rod-spec" data-rail-rod-spec fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.6" stroke-linecap="round"/>
+          <path class="rail__rod-edge" data-rail-rod-edge fill="none" stroke="rgba(22,25,29,0.28)" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+
+        <div class="rail__rack" data-rail-rack></div>
+
+        <div class="rail__footer">
+          <div class="rail__active">
+            <span class="rail__active-name" data-rail-name>Hoodie</span>
+            <span class="rail__active-price" data-rail-price>₹8,490</span>
+            <div class="rail__active-actions">
+              <a class="rail__active-link" href="#product/hoodie" data-rail-details data-product-link="hoodie">View piece →</a>
+              <button type="button" class="rail__guide-btn" data-open-size-guide="topwear">Size Guide (IND)</button>
+            </div>
+          </div>
+
+          <div class="rail__progress" aria-hidden="true">
+            <div class="rail__progress-track">
+              <div class="rail__progress-thumb" data-rail-progress></div>
+            </div>
+          </div>
+
+          <div class="rail__editorial">
+            <p class="rail__editorial-copy">Crafted in heavyweight fleece.<br>Cut oversized. Made to last.</p>
+            <a class="rail__editorial-link" href="#runway" data-nav="runway">Shop the Collection →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="product-view" class="pdp" hidden aria-label="Product details">
+      <div class="pdp__inner" id="pdp-root"></div>
+      <div id="pdp-lightbox" class="pdp-lb" role="dialog" aria-modal="true" aria-label="High-resolution product image viewer" hidden>
+        <div class="pdp-lb__top">
+          <div class="pdp-lb__meta">
+            <span class="pdp-lb__title" data-pdp-lb-title></span>
+            <span class="pdp-lb__count" data-pdp-lb-count></span>
+          </div>
+          <div class="pdp-lb__controls">
+            <button type="button" class="pdp-lb__btn" data-pdp-lb-zoom aria-label="Toggle zoom magnification">2.5× Zoom</button>
+            <button type="button" class="pdp-lb__close" data-pdp-lb-close aria-label="Close fullscreen image">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="pdp-lb__stage" data-pdp-lb-stage>
+          <img class="pdp-lb__img" data-pdp-lb-img alt="" referrerPolicy="no-referrer" draggable="false">
+        </div>
+        <div class="pdp-lb__nav">
+          <button type="button" class="pdp-lb__nav-btn" data-pdp-lb-prev aria-label="Previous image">
+            <svg width="20" height="12" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M25 7H1M7 1L1 7l6 6"/></svg>
+          </button>
+          <span class="pdp-lb__hint" data-pdp-lb-hint>Tap or click image to zoom · Drag to pan</span>
+          <button type="button" class="pdp-lb__nav-btn" data-pdp-lb-next aria-label="Next image">
+            <svg width="20" height="12" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h24M19 1l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="error-404-view" class="err404" hidden aria-labelledby="err404-title">
+      <div class="err404__inner">
+        <div class="err404__meta">
+          <span class="err404__eyebrow" data-err404-eyebrow>Error 404 · Route Unavailable</span>
+          <span class="err404__path" data-err404-detail hidden></span>
+        </div>
+
+        <div class="err404__hero">
+          <div class="err404__code" aria-hidden="true">404</div>
+          <div class="err404__copy">
+            <h1 id="err404-title" class="err404__title" data-err404-title>This piece or runway room could not be found.</h1>
+            <p class="err404__desc" data-err404-desc>The link may be outdated, the look may have moved off the floor, or an unexpected display issue interrupted the route.</p>
+          </div>
+        </div>
+
+        <div class="err404__actions">
+          <button type="button" class="home-cta" data-err404-home>
+            <span>Return to Home</span>
+            <svg width="22" height="12" viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h24M19 1l6 6-6 6"/></svg>
+          </button>
+          <button type="button" class="err404__secondary" data-err404-runway>Enter the Runway →</button>
+          <button type="button" class="err404__ghost" data-open-size-guide="topwear">Interactive Size Guide (IND)</button>
+        </div>
+
+        <div class="err404__suggestions">
+          <span class="err404__suggest-label">Curated Destinations</span>
+          <div class="err404__links">
+            <button type="button" class="err404__link" data-err404-look="0">Look 01 · The City Edit →</button>
+            <button type="button" class="err404__link" data-err404-look="1">Look 02 · Gallery Opening →</button>
+            <button type="button" class="err404__link" data-err404-look="5">Look 06 · Studio Day →</button>
+            <button type="button" class="err404__link" data-open-policy="returns">Return &amp; Security Policy →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="bag-dialog">
+    <div class="bag-heading">
+      <h2>Your styling bag</h2>
+      <button id="close-bag" type="button" aria-label="Close styling bag">×</button>
+    </div>
+    <p class="bag-note">Protected by 256-bit SSL/TLS encryption and PCI DSS Level 1 tokenized checkout. No card details are stored here.</p>
+    <div id="bag-items"></div>
+    <p id="bag-total"></p>
+    <div class="bag-actions">
+      <a id="checkout-bag" class="bag-checkout" href="https://nike-makknzjs.myshopify.com/cart" target="_blank" rel="noopener noreferrer" aria-disabled="true">Proceed to Encrypted Checkout ↗</a>
+      <button id="export-bag" type="button">Download outfit shortlist</button>
+    </div>
+    <div class="bag-policies">
+      <span><strong>SSL &amp; PCI DSS:</strong> End-to-end HTTPS &amp; zero local card storage.</span>
+      <span><strong>30-Day Returns:</strong> Free pickup &amp; full refund within 5–7 business days. <button type="button" class="bag-policy-trigger" data-open-policy="returns">View Policy</button></span>
+    </div>
+  </dialog>
+
+  <dialog id="policy-dialog" aria-labelledby="policy-dialog-title">
+    <div class="bag-heading">
+      <h2 id="policy-dialog-title">Security, PCI DSS &amp; Return Policy</h2>
+      <button id="close-policy" type="button" aria-label="Close policy details">×</button>
+    </div>
+    <div class="policy-body">
+      <section class="policy-section" data-policy-section="returns">
+        <h3>Return &amp; Refund Policy</h3>
+        <dl class="policy-list">
+          <div>
+            <dt>30-Day Window</dt>
+            <dd>Return any unworn apparel or footwear within 30 calendar days of delivery with original tags, labels, and unmarked shoebox intact.</dd>
+          </div>
+          <div>
+            <dt>Free Exchange</dt>
+            <dd>Complimentary size swaps across EU footwear and apparel sizes, subject to warehouse stock availability.</dd>
+          </div>
+          <div>
+            <dt>Refund Timeline</dt>
+            <dd>Quality inspection completes within 48 hours of doorstep pickup. Full refunds issue to your original UPI, card, or bank account within 5–7 business days.</dd>
+          </div>
+          <div>
+            <dt>Look Bundles</dt>
+            <dd>Individual pieces from a 10% curated Look Bundle can be returned or exchanged separately; refunds reflect the pro-rated bundle price paid.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="policy-section" data-policy-section="security">
+        <h3>SSL / HTTPS &amp; PCI DSS Compliance</h3>
+        <dl class="policy-list">
+          <div>
+            <dt>TLS 1.3 / SSL</dt>
+            <dd>All storefront browsing, catalog queries, and cart handoffs are enforced over HTTPS with HSTS and strict mixed-content blocking.</dd>
+          </div>
+          <div>
+            <dt>PCI DSS Level 1</dt>
+            <dd>Compliant with PCI DSS SAQ-A standards: card numbers, CVVs, and PINs never touch browser storage or application memory and are processed solely on the tokenized HTTPS checkout.</dd>
+          </div>
+          <div>
+            <dt>Privacy &amp; Headers</dt>
+            <dd>Enforces <code>X-Content-Type-Options: nosniff</code>, <code>strict-origin-when-cross-origin</code> referrer rules, and restricted device permissions.</dd>
+          </div>
+        </dl>
+      </section>
+    </div>
+  </dialog>
+
+  <dialog id="size-guide-dialog" aria-labelledby="size-guide-title">
+    <div class="bag-heading">
+      <div>
+        <span class="sg-eyebrow">Indian Base Standard (IND) · Personalized Fit</span>
+        <h2 id="size-guide-title">Interactive Size Guide</h2>
+      </div>
+      <button id="close-size-guide" type="button" aria-label="Close interactive size guide">×</button>
+    </div>
+
+    <div class="sg-cats" role="tablist" aria-label="Garment category">
+      <button type="button" class="sg-cat-btn" role="tab" data-sg-cat="topwear" aria-selected="true">Topwear &amp; Knitwear</button>
+      <button type="button" class="sg-cat-btn" role="tab" data-sg-cat="outerwear" aria-selected="false">Outerwear &amp; Hoodies</button>
+      <button type="button" class="sg-cat-btn" role="tab" data-sg-cat="bottoms" aria-selected="false">Bottoms &amp; Denim</button>
+      <button type="button" class="sg-cat-btn" role="tab" data-sg-cat="footwear" aria-selected="false">Footwear (IND → EU)</button>
+    </div>
+
+    <div class="sg-layout">
+      <div class="sg-inputs">
+        <div class="sg-inputs__head">
+          <span class="sg-section-label">Your Measurements</span>
+          <div class="sg-units" role="group" aria-label="Measurement unit">
+            <button type="button" class="sg-unit-btn is-active" data-sg-unit="cm" aria-pressed="true">cm</button>
+            <button type="button" class="sg-unit-btn" data-sg-unit="in" aria-pressed="false">in</button>
+          </div>
+        </div>
+
+        <div class="sg-fields" data-sg-fields></div>
+
+        <div class="sg-fit-wrap">
+          <span class="sg-field__label" data-sg-fit-label>Preferred Fit</span>
+          <div class="sg-fits" data-sg-fits role="radiogroup" aria-label="Preferred Fit"></div>
+        </div>
+      </div>
+
+      <div class="sg-output">
+        <div class="sg-rec" aria-live="polite">
+          <div class="sg-rec__top">
+            <span class="sg-rec__eyebrow">Recommended Indian Size</span>
+            <span class="sg-rec__badge" data-sg-rec-label>Label M</span>
+          </div>
+          <div class="sg-rec__size" data-sg-rec-size>IND 38</div>
+          <p class="sg-rec__note" data-sg-rec-note></p>
+          <button type="button" class="sg-apply-btn" data-sg-apply hidden></button>
+        </div>
+
+        <div class="sg-chart-wrap">
+          <div class="sg-chart-head">
+            <span class="sg-section-label" data-sg-chart-title>Indian Size Conversion Chart</span>
+            <span class="sg-chart-sub">Base: India (IND)</span>
+          </div>
+          <div class="sg-table-scroll">
+            <table class="sg-table" data-sg-table></table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sg-footer">
+      <p class="sg-tip" data-sg-tip></p>
+      <button type="button" class="bag-policy-trigger" data-open-policy="returns">Free Indian Size Exchanges →</button>
+    </div>
+  </dialog>
+
+  <div id="bag-status" role="status" aria-live="polite"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
